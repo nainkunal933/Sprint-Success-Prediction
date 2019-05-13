@@ -55,4 +55,5 @@ for i in range(no_of_entity):
     sprint_run_story_point_estimation = story_point_estimation[i]
     env.process(sprint_run(sprint_run_team_size, sprint_run_length, sprint_run_story_point_estimation))
 
-env.run()
+output = env.run()
+print(output, "\n")
