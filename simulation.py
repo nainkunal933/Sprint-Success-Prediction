@@ -13,9 +13,9 @@ with open('Simulation_Test_Data - Sheet1.csv') as csv_file:
             print('Columns names are ', i[0], i[1], i[2])
             line_count += 1
         else:
-            team_size.append(i[0])
-            sprint_length.append(i[1])
-            story_point_estimation.append(i[2])
+            team_size.append(float(i[0]))
+            sprint_length.append(float(i[1]))
+            story_point_estimation.append(float(i[2]))
             line_count += 1
     print(team_size, '\n', sprint_length, '\n', story_point_estimation)
 
@@ -45,6 +45,7 @@ def sprint_run(sprint_run_team_size, sprint_run_length, sprint_run_story_point_e
         return True
     else:
         return False
+
 
 # We are considering 1 sprint equal to 1 entity
 # Run the simulation
