@@ -6,10 +6,7 @@ team_size = []
 sprint_length = []
 story_point_estimation = []
 
-def isclose(a, b, rel_tol=1e-09, abs_tol=0.0):
-    return abs(a-b) <= max(rel_tol * max(abs(a), abs(b)), abs_tol)
-
-with open('Simulation_Test_Data - Sheet1.csv') as csv_file:
+with open('data.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
     for i in csv_reader:
@@ -73,3 +70,10 @@ for i in range(no_of_entity):
 
 output = env.run()
 print(p)
+
+data = p.get_string()
+
+with open('console_output.txt', 'w+') as f:
+    f.write(data)
+
+f.close()
